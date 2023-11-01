@@ -1,31 +1,23 @@
 import random as r
 import string as s
+from topics import topics
 
-def random_choice(fruit_list):
-    word = r.choice(fruit_list)
+def random_choice(topic_dict):
+    word = r.choice(topic_dict)
     return word
 
-fruit_list = [
-    'Apple', 
-    'Banana', 
-    'Clementine', 
-    'Date', 
-    'Eggplant',
-    'Oranges', 
-    'Mango', 
-    'Grapes', 
-    'Strawberry', 
-    'Melon']
-
 letters = [x for x in s.ascii_lowercase]
-
-word = random_choice(fruit_list).lower()
+topic_options = [x for x in topics.keys()]
+topic = random_choice(topic_options)
+cap_topic = s.capwords(topic)
+word = random_choice(topics[topic]).lower()
 guessed_word = ''
-turns = round(len(word) * 1.5)
+turns = 7 # Post, Head, Body, 2 Arms, 2 Legs 
 
-name = input("\nWelcome to a game of hangman! What is your name? ")
-print (f"Hello {name.capitalize()}! Time to play hangman!")
-print ("Start guessing...")
+print("Welcome to a game of hangman!")
+name = input("\nWhat is your name? \n")
+print (f"\nGreetings {name.capitalize()}! Time to play hangman!")
+print (f"Start guessing to find the word from the topic: {cap_topic}")
 
 while turns > 0:
     failed = 0
@@ -41,7 +33,7 @@ while turns > 0:
         print(f"\nWell done {name.capitalize()}! You won!")
         break
 
-    guess = str(input("\nChoose a letter:\t")).lower()
+    guess = str(input("\nChoose a letter: ")).lower()
     
     if len(guess) != 1 or guess.lower() not in letters: 
         print("Please enter a single character.")
@@ -52,6 +44,7 @@ while turns > 0:
         print(f"\nBad luck! you have {turns} turns remaining.")
         if turns == 0:
             print(f"Oh no {name.capitalize()}! You have lost the game!")
+            print(f"The word was: {word}")
     
     guessed_word += guess
     
