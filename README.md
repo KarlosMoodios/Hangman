@@ -21,7 +21,7 @@
 1. Installation instructions
 
 1. Usage instructions
-    - Enter you name
+    - Enter your name
     - Read the prompts
     - Enter your guess
     - Win or lose! 
