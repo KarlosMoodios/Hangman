@@ -2,12 +2,10 @@ import random as r
 import string as s
 from topics import topics
 
-word_list = ['Apple', 'Banana', 'Clementine', 'Date', 'Eggplant']
-
 class Hangman:
     def __init__(self, word_list, num_lives = 7):
-        self.word_to_guess = random_choice(word_list)
-        self.word_guessed = ["_" for i in self.word_to_guess]
+        self.word_to_guess = random_choice(topics)
+        self.word_guessed = ["_" for element in self.word_to_guess]
         self.num_letters = len(set(self.word_to_guess))
         self.num_lives = num_lives
         self.word_list = []
@@ -24,10 +22,9 @@ class Hangman:
             print(f"You have {self.num_lives} remaining.")
 
         for index, letter in enumerate(self.word_to_guess.lower()):
-            print(f"I:{index}, L:{letter}")
             if letter == guess:
                 self.word_guessed[index] = guess
-                print(*self.word_guessed)
+        print(*self.word_guessed)
         self.num_letters -= 1
     
     def ask_for_input(self):
@@ -41,16 +38,13 @@ class Hangman:
                 self.check_guess(guess)
                 self.list_of_guesses.append(guess)
    
-def random_choice(topic_dict):
+def random_choice(topics):
         topic_options = [x for x in topics.keys()]
-        topic = random_choice(topic_options)
-        cap_topic = s.capwords(topic)
-        word = random_choice(topics[topic]).lower()
-        word = r.choice(topic_dict)
+        topic = r.choice(topic_options)
+        word = r.choice(topics[topic]).lower()
         return word
 
-game = Hangman(word_list)
-print(game.word_to_guess)
+
+game = Hangman(random_choice(topics))
 print(*game.word_guessed)
 game.ask_for_input()
-

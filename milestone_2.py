@@ -61,6 +61,7 @@ def ask_for_input():
 
 def setup():
     topic_options = [x for x in topics.keys()]
+    print(topic_options)
     topic = random_choice(topic_options)
     cap_topic = s.capwords(topic)
     word = random_choice(topics[topic]).lower()
