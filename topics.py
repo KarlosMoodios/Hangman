@@ -1,6 +1,6 @@
 topics = {
-    'fruits': ['Apple', 'Banana', 'Clementine', 'Date', 'Eggplant', 'Oranges', 'Mango', 'Grapes', 'Strawberry', 'Melon'], 
-    'cities': ['London', 'Glasgow', 'Liverpool', 'Cambridge', 'Leicester', 'Nottingham', 'Portsmouth', 'Plymouth', 'Edinburgh', 'Exeter'], 
-    'animals': ['Dinosaur', 'Pufferfish', 'Giraffe', 'Panda', 'Koala', 'Hippo', 'Leopard', 'Tiger', 'Gorilla', 'Platypus'], 
-    'buildings': ['Colosseum', 'Pantheon', 'Pentagon', 'Mosque', 'Church', 'Barracks', 'Castle', 'Clocktower', 'Cathedral', 'Chapel']
+    'Fruits': ['Apple', 'Banana', 'Clementine', 'Date', 'Eggplant', 'Oranges', 'Mango', 'Grapes', 'Strawberry', 'Melon'], 
+    'UK cities': ['London', 'Glasgow', 'Liverpool', 'Cambridge', 'Leicester', 'Nottingham', 'Portsmouth', 'Plymouth', 'Edinburgh', 'Exeter'], 
+    'Animals': ['Dinosaur', 'Pufferfish', 'Giraffe', 'Panda', 'Koala', 'Hippo', 'Leopard', 'Tiger', 'Gorilla', 'Platypus'], 
+    'Buildings': ['Colosseum', 'Pantheon', 'Pentagon', 'Mosque', 'Church', 'Barracks', 'Castle', 'Clocktower', 'Cathedral', 'Chapel']
     }
